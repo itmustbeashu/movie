@@ -1,17 +1,40 @@
 <html>
 <head>
 <title>Agent Widget</title>
+<style>
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+  </style>
 <meta lang = "en-us">
   <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
 <script type = "text/javascript" src="movies.js"></script>
 </head>
 <body>
 <div class="container pt-50">
-<div id="app"><h2>Movie Search 1</h2></div><hr/>
-<div><b> Title : </b><span id="Title"></span></div>
-<div><b> Genre: </b><span id="Genre"></span></div>
-<div><b> Year: </b><span id="Year"></span></div>
-<div><b> Plot: </b><span id="Plot"></span></div>
+<div id="app"><h2>Movie Search</h2></div><hr/>
+
+
+<div class="card">
+  <img src="" alt="Avatar" style="width:100%" id="poster">
+  <div class="container">
+    <p><b>Title : </b><span id="title"></span></p>
+    <p><span><b>Actor : </b></span><span id="actor"></span></p> 
+    <p><span><b>Director : </b><span id="director"></span</p> 
+    <p><span><b>Genre : </b><span id="genre"></span</p> 
+    <p><span><b>Language : </b><span id="language"></span</p> 
+  </div>
+</div>
 </div>
 </body>
 </html>
