@@ -1,6 +1,7 @@
 var updateCallback = function(data){
     
     const apiKey = '611fd8da';
+    const defaultImage = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Fpressroom%2Fbrand-guidelines%2F&psig=AOvVaw0ZQtlZP4Vg6oLvqOVZX--4&ust=1650368779090000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLCZ___EnfcCFQAAAAAdAAAAABAD'
     var value = data.newValue;
     console.log("after value ");
     console.log("value : "+value);
@@ -25,8 +26,8 @@ var updateCallback = function(data){
     document.getElementById("genre").innerHTML = res.Genre;
     document.getElementById("director").innerHTML = res.Director;
     document.getElementById("language").innerHTML = res.Language;
-    document.getElementById("poster").src = res.Poster;
-    document.getElementById('image').appendChild(img);
+    document.getElementById("poster").src = res.Poster?res.Poster:defaultImage;
+
     
     
     }).catch(function(error){
