@@ -1,4 +1,5 @@
 var updateCallback = function(data){
+    console.log("UP 1");
     var value = data.newValue;
     console.log("after value ");
     console.log("value : "+value);
@@ -6,8 +7,10 @@ var updateCallback = function(data){
     console.log("line : "+line);
     var movieName = line.text;
     if (line.source.toLowerCase()==="visitor"){
-    // var url = "https://www.omdbapi.com?t=+movieName+"&apikey=32278a3";
-    
+    // var url = https://www.omdbapi.com?t=+movieName+"&apikey=32278a3";
+
+    var url = `https://www.omdbapi.com/?apikey=611fd8da&t=${movieName}`
+ 
    
     
     fetch(url)
