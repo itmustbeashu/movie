@@ -1,5 +1,6 @@
 var updateCallback = function(data){
-    console.log("UP 1");
+    
+    const apiKey = '611fd8da';
     var value = data.newValue;
     console.log("after value ");
     console.log("value : "+value);
@@ -7,23 +8,25 @@ var updateCallback = function(data){
     console.log("line : "+line);
     var movieName = line.text;
     if (line.source.toLowerCase()==="visitor"){
-    // var url = https://www.omdbapi.com?t=+movieName+"&apikey=32278a3";
-
-    var url = `https://www.omdbapi.com/?apikey=611fd8da&t=${movieName}`
+   
+    var url = `https://www.omdbapi.com/?apikey=${apiKey}&t=${movieName}`
  
    
     
     fetch(url)
     .then(function(response){
-    
+  
     return response.json();
     }
     ).then(function(res){
-    document.getElementById("Title").innerHTML = res.Title;
-    document.getElementById("Year").innerHTML = res.Year;
-    document.getElementById("Genre").innerHTML = res.Genre;
-    document.getElementById("Plot").innerHTML = res.Plot;
-    
+     
+    document.getElementById("title").innerHTML = res.Title;
+    document.getElementById("actor").innerHTML = res.Actors;
+    document.getElementById("genre").innerHTML = res.Genre;
+    document.getElementById("director").innerHTML = res.Director;
+    document.getElementById("language").innerHTML = res.Language;
+    document.getElementById("poster").src = res.Poster;
+    document.getElementById('image').appendChild(img);
     
     
     }).catch(function(error){
@@ -43,6 +46,6 @@ var updateCallback = function(data){
     };
     
     var chatText = "chatTranscript.lines";
-    
+
     lpTag.agentSDK.init({});
     lpTag.agentSDK.bind(chatText, updateCallback, notifyWhenDone);
