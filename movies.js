@@ -9,7 +9,7 @@ var updateCallback = function(data){
     if (line.source.toLowerCase()==="visitor"){
     // var url = https://www.omdbapi.com?t=+movieName+"&apikey=32278a3";
 
-    var url = `https://www.omdbapi.com/?apikey=611fd8da&t='dhol'`
+       var url = `https://www.omdbapi.com/?apikey=611fd8da&t=${movieName}`;
     
    
     
